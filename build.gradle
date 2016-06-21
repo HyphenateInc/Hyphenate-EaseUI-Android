@@ -44,6 +44,6 @@ android {
 
 dependencies {
     // comments out if sdk already under your libs folder
-	//compile project(':hyphenatechatsdk')
+    //compile project(':hyphenatechatsdk')
     compile fileTree(dir: 'libs', include: '*.jar')
 }

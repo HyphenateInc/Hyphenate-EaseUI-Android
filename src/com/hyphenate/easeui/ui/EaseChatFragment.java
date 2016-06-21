@@ -976,7 +976,7 @@ public class EaseChatFragment extends EaseBaseFragment implements EMMessageListe
     
    
     protected EaseChatFragmentHelper chatFragmentHelper;
-    public void setChatFragmentListener(EaseChatFragmentHelper chatFragmentHelper){
+    public void setChatFragmentHelper(EaseChatFragmentHelper chatFragmentHelper){
         this.chatFragmentHelper = chatFragmentHelper;
     }
     
