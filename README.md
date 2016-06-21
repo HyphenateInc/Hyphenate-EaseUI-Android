@@ -1,5 +1,7 @@
-# easeui
-####EaseUI is a UI library based on hyphenate SDK, encapsulates the IM function of commonly used components, fragments, and so on。This project contains a simple use of demo: simpledemo, developers can import and view it.
+# easeui_android
+####EaseUI encapsulate common IM features, Chat view, chat list view, contact list view, etc, to faciliate the integration process with hyphenate SDK.
+
+####[Initialize easeui_android](http://docs.hyphenate.io/im/androidclientintegration/easeuiuseguide)
 
 
 
