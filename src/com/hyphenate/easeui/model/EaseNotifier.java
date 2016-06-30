@@ -49,9 +49,6 @@ public class EaseNotifier {
     protected final static String[] msg_eng = { "sent a message", "sent a picture", "sent a voice",
                                                 "sent location message", "sent a video", "sent a file", "%1 contacts sent %2 messages"
                                               };
-    protected final static String[] msg_ch = { "发来一条消息", "发来一张图片", "发来一段语音", "发来位置信息", "发来一个视频", "发来一个文件",
-                                               "%1个联系人发来%2条消息"
-                                             };
 
     protected static int notifyID = 0525; // start notification id
     protected static int foregroundNotifyID = 0555;
@@ -82,11 +79,7 @@ public class EaseNotifier {
         notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
 
         packageName = appContext.getApplicationInfo().packageName;
-        if (Locale.getDefault().getLanguage().equals("zh")) {
-            msgs = msg_ch;
-        } else {
-            msgs = msg_eng;
-        }
+        msgs = msg_eng;
 
         audioManager = (AudioManager) appContext.getSystemService(Context.AUDIO_SERVICE);
         vibrator = (Vibrator) appContext.getSystemService(Context.VIBRATOR_SERVICE);
@@ -194,7 +187,6 @@ public class EaseNotifier {
                 notifyText += msgs[1];
                 break;
             case VOICE:
-
                 notifyText += msgs[2];
                 break;
             case LOCATION:
@@ -211,7 +203,7 @@ public class EaseNotifier {
             PackageManager packageManager = appContext.getPackageManager();
             String appname = (String) packageManager.getApplicationLabel(appContext.getApplicationInfo());
             
-            // notification title
+            // set notification title
             String contentTitle = appname;
             if (notificationInfoProvider != null) {
                 String customNotifyText = notificationInfoProvider.getDisplayedText(message);
@@ -317,7 +309,7 @@ public class EaseNotifier {
 
                     ringtone = RingtoneManager.getRingtone(appContext, notificationUri);
                     if (ringtone == null) {
-                        EMLog.d(TAG, "cant find ringtone at:" + notificationUri.getPath());
+                        EMLog.d(TAG, "can't find ringtone at: " + notificationUri.getPath());
                         return;
                     }
                 }
@@ -326,10 +318,8 @@ public class EaseNotifier {
                     String vendor = Build.MANUFACTURER;
                     
                     ringtone.play();
-                    // for samsung S3, we meet a bug that the phone will
-                    // continue ringtone without stop
-                    // so add below special handler to stop it after 3s if
-                    // needed
+                    // for samsung S3, we encounter a bug that the phone will continue ringing without stop
+                    // add the following handler to stop it after 3s if needed
                     if (vendor != null && vendor.toLowerCase().contains("samsung")) {
                         Thread ctlThread = new Thread() {
                             public void run() {
@@ -381,7 +371,7 @@ public class EaseNotifier {
         String getLatestText(EMMessage message, int fromUsersNum, int messageNum);
 
         /**
-         * 设置notification标题
+         * set notification title
          * 
          * @param message
          * @return null- will use the default text
