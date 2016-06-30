@@ -12,6 +12,7 @@
         android:descendantFocusability="afterDescendants"
         android:divider="@color/divider_list"
         android:dividerHeight="1px"
+        android:headerDividersEnabled="true"
         android:fastScrollEnabled="false" />
 
     <com.hyphenate.easeui.widget.EaseSidebar

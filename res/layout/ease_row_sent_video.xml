@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_chat_activity" >
 
-        <ImageView
+        <com.hyphenate.easeui.widget.EaseImageView
             android:id="@+id/iv_userhead"
             android:layout_width="@dimen/size_avatar"
             android:layout_height="@dimen/size_avatar"
@@ -46,7 +46,7 @@
                 android:id="@+id/chatting_video_data_area"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/ease_chat_video_mask_to"
+                android:src="@drawable/ease_chat_video_mask_to"
                 android:gravity="bottom"
                 android:orientation="horizontal" >
 
