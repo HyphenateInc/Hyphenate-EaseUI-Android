@@ -53,7 +53,7 @@ public class LoginActivity extends EaseBaseActivity{
                     public void onError(int code, String error) {
                         runOnUiThread(new Runnable() {
                             public void run() {
-                                Toast.makeText(getApplicationContext(), "Failed to login", 0).show();
+                                Toast.makeText(getApplicationContext(), "login failed", 0).show();
                             }
                         });
                     }
