@@ -22,14 +22,20 @@
         >
     </FrameLayout>
 
-
+<TextView
+	android:layout_width="match_parent"
+	android:layout_height="1dp"
+	android:background="@color/list_divider"
+	/>
     <com.hyphenate.easeui.widget.EaseConversationList
         android:id="@+id/list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@android:color/transparent"
+		android:descendantFocusability="afterDescendants"
         android:cacheColorHint="#00000000"
-        android:divider="@null"
+		android:divider="@color/list_divider"
+		android:dividerHeight="1dp"
+		android:headerDividersEnabled="true"
         hyphenate:cvsListPrimaryTextSize="16sp"
          />
 

@@ -2,9 +2,9 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="59dp"
-     android:id="@+id/list_itease_layout"
-     android:background="#fff"
-    android:gravity="center_vertical" >
+    android:id="@+id/list_itease_layout"
+    android:background="@drawable/ease_mm_listitem"
+    android:gravity="center_vertical">
 
     <RelativeLayout
         android:id="@+id/avatar_container"
@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         android:layout_alignParentLeft="true" >
 
-      <ImageView
+      <com.hyphenate.easeui.widget.EaseImageView
             android:id="@+id/avatar"
             android:layout_width="45dp"
             android:layout_height="45dp"
@@ -21,18 +21,6 @@
             android:scaleType="fitXY"
             android:src="@drawable/ease_default_avatar" />
 
-        <TextView
-            android:id="@+id/unread_msg_number"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="2dp"
-            android:layout_marginTop="3dp"
-            android:background="@drawable/ease_unread_count_bg"
-            android:gravity="center"
-            android:text="7"
-            android:textColor="@android:color/white"
-            android:textSize="12sp" />
     </RelativeLayout>
 
     <TextView
@@ -93,5 +81,19 @@
         android:padding="7dp"
         android:textColor="@color/list_itease_secondary_color"
         android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/unread_msg_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/ease_unread_count_bg"
+        android:gravity="center"
+        android:layout_alignBaseline="@id/message"
+        android:text="7"
+        android:textColor="@android:color/white"
+        android:textSize="12sp" />
 
 </RelativeLayout>
