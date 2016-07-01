@@ -90,7 +90,6 @@ public class EaseImageView extends ImageView {
         pressPaint.setAlpha(0);
         pressPaint.setFlags(Paint.ANTI_ALIAS_FLAG);
 
-        setClickable(true);
         setDrawingCacheEnabled(true);
         setWillNotDraw(false);
     }
@@ -113,7 +112,9 @@ public class EaseImageView extends ImageView {
         Bitmap bitmap = getBitmapFromDrawable(drawable);
         drawDrawable(canvas, bitmap);
 
-        drawPress(canvas);
+        if(isClickable()){
+            drawPress(canvas);
+        }
         drawBorder(canvas);
     }
 
