@@ -65,29 +65,29 @@
             android:screenOrientation="portrait"
             />
 
-        <!-- 设置环信应用的appkey -->
+        <!-- set your appkey -->
         <meta-data
             android:name="EASEMOB_APPKEY"
             android:value="hyphenate-demo#chatdemoui" />
-        <!-- 声明sdk所需的service -->
+        <!-- service which is needed in SDK -->
         <service
             android:name="com.hyphenate.chat.EMChatService"
             android:exported="true" />
-        <!-- 声明sdk所需的receiver -->
+        <!-- receiver which is needed in SDK -->
         <receiver android:name="com.hyphenate.chat.EMMonitorReceiver" >
             <intent-filter>
                 <action android:name="android.intent.action.PACKAGE_REMOVED" />
 
                 <data android:scheme="package" />
             </intent-filter>
-            <!-- 可选filter -->
+            <!-- optional filter -->
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <action android:name="android.intent.action.USER_PRESENT" />
             </intent-filter>
         </receiver>
 
-        <!-- 百度地图所需的service -->
+        <!-- Baidu map service -->
         <service
             android:name="com.baidu.location.f"
             android:enabled="true"
