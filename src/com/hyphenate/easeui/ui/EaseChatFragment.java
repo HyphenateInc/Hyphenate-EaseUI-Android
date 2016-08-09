@@ -183,7 +183,7 @@ public class EaseChatFragment extends EaseBaseFragment implements EMMessageListe
         if (chatType == EaseConstant.CHATTYPE_SINGLE) {
             // set title
             if(EaseUserUtils.getUserInfo(toChatUsername) != null){
-                titleBar.setTitle(EaseUserUtils.getUserInfo(toChatUsername).getNick());
+                titleBar.setTitle(EaseUserUtils.getUserInfo(toChatUsername).getNickname());
             }
             titleBar.setRightImageResource(R.drawable.ease_mm_title_remove);
         } else {
@@ -439,7 +439,7 @@ public class EaseChatFragment extends EaseBaseFragment implements EMMessageListe
         }
         
         if(chatRoomChangeListener != null){
-            EMClient.getInstance().chatroomManager().removeChatRoomChangeListener(chatRoomChangeListener);
+            EMClient.getInstance().chatroomManager().removeChatRoomListener(chatRoomChangeListener);
         }
         
     }
@@ -517,7 +517,7 @@ public class EaseChatFragment extends EaseBaseFragment implements EMMessageListe
             }
 
             @Override
-            public void onMemberKicked(String roomId, String roomName, String participant) {
+            public void onRemovedFromChatRoom(String roomId, String roomName, String participant) {
                 if (roomId.equals(toChatUsername)) {
                     String curUser = EMClient.getInstance().getCurrentUser();
                     if (curUser.equals(participant)) {
@@ -571,14 +571,14 @@ public class EaseChatFragment extends EaseBaseFragment implements EMMessageListe
     }
 
     @Override
-    public void onMessageReadAckReceived(List<EMMessage> messages) {
+    public void onMessageRead(List<EMMessage> messages) {
         if(isMessageListInited) {
             messageList.refresh();
         }
     }
 
     @Override
-    public void onMessageDeliveryAckReceived(List<EMMessage> messages) {
+    public void onMessageDelivered(List<EMMessage> messages) {
         if(isMessageListInited) {
             messageList.refresh();
         }
@@ -960,7 +960,7 @@ public class EaseChatFragment extends EaseBaseFragment implements EMMessageListe
         }
 
         @Override
-        public void onGroupDestroy(final String groupId, String groupName) {
+        public void onGroupDestroyed(final String groupId, String groupName) {
         	// prompt group is dismissed and finish this activity
             getActivity().runOnUiThread(new Runnable() {
                 public void run() {
