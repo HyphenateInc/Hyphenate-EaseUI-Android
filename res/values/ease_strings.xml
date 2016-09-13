@@ -72,7 +72,7 @@
     <string name="newnotify">Receiving a new message</string>
     <string name="shake">Shake</string>
     <string name="chatset">Chat settings</string>
-    <string name="yangshengqi">Use speaker</string>
+    <string name="use_speaker">Use speaker</string>
     <string name="book_black">Black list</string>
     <string name="session">Conversation</string>
     <string name="address_book">Address book</string>
