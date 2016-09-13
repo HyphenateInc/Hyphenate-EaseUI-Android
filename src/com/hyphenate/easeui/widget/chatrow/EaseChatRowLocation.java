@@ -1,19 +1,18 @@
 package com.hyphenate.easeui.widget.chatrow;
 
-import com.hyphenate.chat.EMClient;
-import com.hyphenate.chat.EMLocationMessageBody;
-import com.hyphenate.chat.EMMessage;
-import com.hyphenate.chat.EMMessage.ChatType;
-import com.hyphenate.easeui.R;
-import com.hyphenate.easeui.ui.EaseBaiduMapActivity;
-import com.hyphenate.exceptions.HyphenateException;
-import com.hyphenate.util.LatLng;
-
 import android.content.Context;
 import android.content.Intent;
 import android.view.View;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+
+import com.hyphenate.chat.EMClient;
+import com.hyphenate.chat.EMLocationMessageBody;
+import com.hyphenate.chat.EMMessage;
+import com.hyphenate.chat.EMMessage.ChatType;
+import com.hyphenate.easeui.R;
+import com.hyphenate.easeui.ui.EaseMapActivity;
+import com.hyphenate.exceptions.HyphenateException;
 
 public class EaseChatRowLocation extends EaseChatRow{
 
@@ -82,31 +81,11 @@ public class EaseChatRowLocation extends EaseChatRow{
     
     @Override
     protected void onBubbleClick() {
-        Intent intent = new Intent(context, EaseBaiduMapActivity.class);
+        Intent intent = new Intent(context, EaseMapActivity.class);
         intent.putExtra("latitude", locBody.getLatitude());
         intent.putExtra("longitude", locBody.getLongitude());
         intent.putExtra("address", locBody.getAddress());
         activity.startActivity(intent);
     }
-    
-    /*
-	 * listener for map clicked
-	 */
-	protected class MapClickListener implements View.OnClickListener {
-
-		LatLng location;
-		String address;
-
-		public MapClickListener(LatLng loc, String address) {
-			location = loc;
-			this.address = address;
-
-		}
-
-		@Override
-		public void onClick(View v) {
-		   
-		}
-	}
 
 }
