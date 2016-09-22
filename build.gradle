@@ -1,10 +1,5 @@
 apply plugin: 'com.android.library'
 
-//    repositories {
-//        jcenter()
-////        maven { url 'https://maven.fabric.io/public' }
-//        maven { url "https://raw.githubusercontent.com/HyphenateInc/Hyphenate-SDK-Android/master/repository" }
-//    }
 
 android {
     compileSdkVersion 23
